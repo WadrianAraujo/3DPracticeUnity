@@ -4,10 +4,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController _controller;
     private Vector3 _forward, _strafe, _vertical;
-
+    private Vector3 _direction;
+        
     private float _forwarSpeed = 5f; 
     private float _strafeSpeed = 5f;
 
+    
     private float _gravity;
     private float _jumpSpeed;
     private float _maxJumpHeight = 2f;
@@ -26,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         _forward = forwardInput * _forwarSpeed * transform.forward;
         _strafe = strafeInput * _strafeSpeed * transform.right;
-
+        
         _vertical += _gravity * Time.deltaTime * Vector3.up;
         
         // verification to say it's touching the ground
